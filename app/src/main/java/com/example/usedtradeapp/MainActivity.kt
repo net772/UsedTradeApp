@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.usedtradeapp.chatlist.ChatListFragment
 import com.example.usedtradeapp.databinding.ActivityMainBinding
+import com.example.usedtradeapp.firebase.FirebaseManager
 import com.example.usedtradeapp.home.HomeFragment
 import com.example.usedtradeapp.mypage.MyPageFragment
 
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         // 액티비티에서 사용할 바인딩 클래스의 인스턴스 생성
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         initActivity()
     }
 

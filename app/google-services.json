@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "969740313684",
+    "firebase_url": "https://usedtradeapp-cb722-default-rtdb.firebaseio.com",
+    "project_id": "usedtradeapp-cb722",
+    "storage_bucket": "usedtradeapp-cb722.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969740313684:android:5816a39feccce93d8039c1",
+        "android_client_info": {
+          "package_name": "com.example.usedtradeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969740313684-3ifu0tkh24doh5genl3pn8v1nm7bc0v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAskSs90R4t37PrC7_HEM-YFj5psFwkATU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969740313684-3ifu0tkh24doh5genl3pn8v1nm7bc0v7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
