@@ -49,27 +49,13 @@ class ArticleAdapter(
         }
     }
 
-    override fun onCurrentListChanged(
-        previousList: MutableList<ArticleModel>,
-        currentList: MutableList<ArticleModel>
-    ) {
-        super.onCurrentListChanged(previousList, currentList)
-        Log.d("동현","previousList : $previousList")
-        Log.d("동현","currentList : $currentList")
-    }
-
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<ArticleModel>() {
             override fun areItemsTheSame(oldItem: ArticleModel, newItem: ArticleModel): Boolean {
-                Log.d("동현","areItemsTheSame")
-                Log.d("동현","areItemsTheSame : ${oldItem.createdAt == newItem.createdAt}")
                 return oldItem.createdAt == newItem.createdAt
             }
 
             override fun areContentsTheSame(oldItem: ArticleModel, newItem: ArticleModel): Boolean {
-                Log.d("동현","areContentsTheSame")
-                Log.d("동현","areContentsTheSame : ${oldItem == newItem}")
-
                 return oldItem == newItem
             }
 
@@ -77,19 +63,3 @@ class ArticleAdapter(
     }
 
 }
-
-//override fun getBinding(
-//    parent: ViewGroup,
-//    viewType: Int,
-//): BaseViewHolder<ItemHistoryLayoutBinding> {
-//    val binding = ItemHistoryLayoutBinding.inflate(
-//        LayoutInflater.from(parent.context), parent, false)
-//
-//    return ViewHolder(binding).also { holder ->
-//        binding.btnRemove.setOnClickListener {
-//            if (RecyclerView.NO_POSITION != holder.adapterPosition) {
-//                removeItem(holder.adapterPosition)
-//            }
-//        }
-//    }
-//}

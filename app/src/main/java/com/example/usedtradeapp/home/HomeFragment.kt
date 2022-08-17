@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.usedtradeapp.chatlist.ChatListItem
 import com.example.usedtradeapp.databinding.FragmentHomeBinding
+import com.example.usedtradeapp.firebase.DBKey.Companion.CHILD_CHAT
 import com.example.usedtradeapp.firebase.FirebaseManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.ChildEventListener
@@ -100,7 +101,25 @@ class HomeFragment : Fragment() {
                     itemTitle = articleModel.title,
                     key = System.currentTimeMillis()
                 )
+                firebaseManager.userDB.child(firebaseManager.auth.currentUser?.uid.orEmpty())
+                    .child(CHILD_CHAT)
+                    .push()
+                    .setValue(chatRoom)
+
+                firebaseManager.userDB.child(articleModel.sellerId)
+                    .child(CHILD_CHAT)
+                    .push()
+                    .setValue(chatRoom)
+
+                Toast.makeText(requireContext(), "채팅방이 생성되었습니다. 채팅탭에서 확인해주세요.", Toast.LENGTH_SHORT).show()
+
+            } else {
+                // 내가 올린 아이템
+                Toast.makeText(requireContext(), "내가 올린 아이템입니다.", Toast.LENGTH_SHORT).show()
             }
+        } else {
+            // 로그인 x
+            Toast.makeText(requireContext(), "로그인 후 사용해주세요", Toast.LENGTH_SHORT).show()
         }
     }
 
