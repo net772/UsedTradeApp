@@ -1,7 +1,6 @@
 package com.example.usedtradeapp.chatroom
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.usedtradeapp.databinding.ActivityChatroomBinding
 import com.example.usedtradeapp.firebase.DBKey.Companion.DB_CHATS

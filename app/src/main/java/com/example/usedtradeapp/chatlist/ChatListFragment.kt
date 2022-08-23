@@ -33,7 +33,9 @@ class ChatListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // 액티비티 와는 다르게 layoutInflater 를 쓰지 않고 inflater 인자를 가져와 뷰와 연결한다.
-        mBinding = FragmentChatlistBinding.inflate(inflater, container, false)
+        mBinding = FragmentChatlistBinding.inflate(inflater, container, false).apply {
+            lifecycleOwner = viewLifecycleOwner
+        }
         return binding.root
     }
 

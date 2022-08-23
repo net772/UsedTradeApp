@@ -1,6 +1,5 @@
 package com.example.usedtradeapp.firebase
 
-import com.example.usedtradeapp.firebase.DBKey.Companion.CHILD_CHAT
 import com.example.usedtradeapp.firebase.DBKey.Companion.DB_ARTICLES
 import com.example.usedtradeapp.firebase.DBKey.Companion.DB_USERS
 import com.google.firebase.auth.FirebaseAuth
@@ -17,7 +16,6 @@ class FirebaseManager {
     val userDB: DatabaseReference = Firebase.database.reference.child(DB_USERS)
     val auth: FirebaseAuth = Firebase.auth
     val storage: FirebaseStorage = Firebase.storage
-    val chatDB = Firebase.database.reference.child(DB_USERS).child(auth.currentUser?.uid.orEmpty()).child(CHILD_CHAT)
 
     fun addArticleDBListener(listener: ChildEventListener) {
         articleDB.addChildEventListener(listener)
